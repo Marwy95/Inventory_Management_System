@@ -12,5 +12,8 @@
         EmailIsNotFound = 5,
         UserNameIsNotFound = 6,
         WrongOtp = 8,
+        //Product
+        InvalidProductID,
+        NoProductsFound
     }
 }

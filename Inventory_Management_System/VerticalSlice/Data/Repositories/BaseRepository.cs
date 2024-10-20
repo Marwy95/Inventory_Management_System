@@ -18,47 +18,48 @@ namespace Inventory_Management_System.VerticalSlice.Data.Repositories
 
         public bool Any(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return GetAll().Any(predicate);
         }
 
-        public void Delete(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+    
 
         public T First(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return GetAll().FirstOrDefault(predicate);
         }
 
         public IQueryable<T> Get(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return GetAll().Where(predicate);
         }
 
         public IQueryable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().Where(t => !t.IsDeleted);
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+           return GetAll().FirstOrDefault(e=>e.ID == id);
         }
-
+        public void Delete(int id)
+        {
+            var entity = GetById(id);
+            Delete(entity);
+        }
+        public void Delete(T entity)
+        {
+            entity.IsDeleted = true;
+            Update(entity);
+        }
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+           _context.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _context.Update(entity);
         }
     }
 }

@@ -27,12 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="VerticalSlice\Features\InventoryTransactions\" />
     <Folder Include="VerticalSlice\Features\Products\AddProduct\Queries\" />
-    <Folder Include="VerticalSlice\Features\Products\DeleteProduct\" />
-    <Folder Include="VerticalSlice\Features\Products\GetAllProducts\" />
-    <Folder Include="VerticalSlice\Features\Products\GetProductDetails\" />
-    <Folder Include="VerticalSlice\Features\Products\UpdateProduct\" />
     <Folder Include="VerticalSlice\Features\Users\" />
     <Folder Include="VerticalSlice\Features\Reports\" />
   </ItemGroup>

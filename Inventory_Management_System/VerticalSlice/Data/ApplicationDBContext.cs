@@ -6,10 +6,16 @@ namespace Inventory_Management_System.VerticalSlice.Data
 {
     public class ApplicationDBContext: DbContext 
     {
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
+       : base(options)
+        {
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("DATABASE_URL"))
-               .LogTo(log => Debug.WriteLine(log), LogLevel.Information);
+          
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
         }
         DbSet<Product>Products { get; set; }
     }
