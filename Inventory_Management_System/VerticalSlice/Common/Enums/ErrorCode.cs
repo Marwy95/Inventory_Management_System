@@ -12,8 +12,14 @@
         EmailIsNotFound = 5,
         UserNameIsNotFound = 6,
         WrongOtp = 8,
+        InvalidPhoneNumber,
+        UnableTogenerateToken,
         //Product
         InvalidProductID,
-        NoProductsFound
+        NoProductsFound,
+        NotEnoughProducts,
+        NoLowStockProducts,
+            //
+            UnableToSendEmail
     }
 }

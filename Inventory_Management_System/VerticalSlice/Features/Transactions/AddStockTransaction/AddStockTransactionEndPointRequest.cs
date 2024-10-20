@@ -1,6 +1,6 @@
 ﻿using Inventory_Management_System.VerticalSlice.Common.Enums;
 
-namespace Inventory_Management_System.VerticalSlice.Features.Transactions.AddTransaction
+namespace Inventory_Management_System.VerticalSlice.Features.Transactions.AddStockTransaction
 {
     public class AddStockTransactionEndPointRequest
     {

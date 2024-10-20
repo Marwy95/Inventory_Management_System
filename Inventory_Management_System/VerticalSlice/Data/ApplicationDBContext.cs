@@ -18,5 +18,7 @@ namespace Inventory_Management_System.VerticalSlice.Data
         {
         }
         DbSet<Product>Products { get; set; }
+        DbSet<Transaction> Transactions { get; set; }
+        DbSet<User> Users { get; set; }
     }
 }
