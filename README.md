@@ -34,11 +34,11 @@ Different access levels for users (e.g., Admin access for certain features).
 
 ## API Endpoints
 ### Product Management
-#### POST /AddproductEndPoint - Create a new product.
-PUT /UpdateProductEndPoint/{id} - Update an existing product.
-DELETE /DeleteProductEndPoint/{id} - Delete a product.
-GET /GetProductDetailsEndPoint/{id} - Get product details.
-GET /GetAllProductsEndPoint - List all products.
+- POST /AddproductEndPoint - Create a new product.
+- PUT /UpdateProductEndPoint/{id} - Update an existing product.
+- DELETE /DeleteProductEndPoint/{id} - Delete a product.
+- GET /GetProductDetailsEndPoint/{id} - Get product details.
+- GET /GetAllProductsEndPoint - List all products.
 
 ### Inventory Transactions
 POST /AddStockTransactionEndPoint - Add stock.
