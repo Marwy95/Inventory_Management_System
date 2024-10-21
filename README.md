@@ -18,7 +18,7 @@ Hangfire for Background Jobs
  List all products in inventory.
 
 ### Inventory Transactions
-Add, remove, stock between warehouses.
+Add, remove Transaction.
 Transfer Stock between warehouses -in progress
 
 ### Reporting
