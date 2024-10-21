@@ -20,6 +20,8 @@
         NotEnoughProducts,
         NoLowStockProducts,
             //
-            UnableToSendEmail
+            UnableToSendEmail,
+            //
+            NoTransactionHistory
     }
 }

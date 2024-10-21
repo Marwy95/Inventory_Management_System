@@ -3,6 +3,7 @@ using Inventory_Management_System.VerticalSlice.Common;
 using Inventory_Management_System.VerticalSlice.Features.Products.DeleteProduct.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Inventory_Management_System.VerticalSlice.Features.Products.DeleteProduct
 {
@@ -16,6 +17,7 @@ namespace Inventory_Management_System.VerticalSlice.Features.Products.DeleteProd
             _mediator = mediator;
         }
         [HttpDelete]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProductById(int id)
         {
            var result = await _mediator.Send(new DeleteProductByIdCommand(id));

@@ -1,6 +1,6 @@
-﻿namespace Inventory_Management_System.VerticalSlice.Features.Products.GetAllProducts
+﻿namespace Inventory_Management_System.VerticalSlice.Features.Reports.CreateLowStockReport
 {
-    public class GetAllProductsEndPointResponse
+    public class CreateLowStockReportEndPointResponse
     {
         public string Name { get; set; }
         public string Description { get; set; }

@@ -5,6 +5,7 @@ using Inventory_Management_System.VerticalSlice.Features.Products.AddProduct.Com
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Inventory_Management_System.VerticalSlice.Features.Products.GetProductDetails.Queries;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Inventory_Management_System.VerticalSlice.Features.Products.GetProductDetails
 {
@@ -19,6 +20,7 @@ namespace Inventory_Management_System.VerticalSlice.Features.Products.GetProduct
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetProductByIdAsync(int id)
         {
             var result = await _mediator.Send(new GetProductDetailsByIdQuery(id));

@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Inventory_Management_System.VerticalSlice.Entities;
+using Inventory_Management_System.VerticalSlice.Features.Reports.CreateTransactionHistoryReport;
+using Inventory_Management_System.VerticalSlice.Features.Reports.CreateTransactionHistoryReport.Commands;
 using Inventory_Management_System.VerticalSlice.Features.Transactions.AddStockTransaction;
 using Inventory_Management_System.VerticalSlice.Features.Transactions.AddStockTransaction.Command;
 using Inventory_Management_System.VerticalSlice.Features.Transactions.RemoveStockTransaction;
@@ -12,6 +15,8 @@ namespace Inventory_Management_System.VerticalSlice.Common.Profiles
         {
             CreateMap<AddStockTransactionEndPointRequest, AddStockTransactionCommand>();
             CreateMap<RemoveStockTransactionEndPointRequest, RemoveStockTransactionCommand>();
+            CreateMap<CreateTransactionHistoryReportRequest, CreateTransactionHistoryReportCommand>();
+            CreateMap<Transaction, CreateTransactionHistoryReportResponse>();
         }
     }
 }

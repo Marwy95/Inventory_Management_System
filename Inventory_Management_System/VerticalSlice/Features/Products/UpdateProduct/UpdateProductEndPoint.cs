@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Inventory_Management_System.VerticalSlice.Features.Products.UpdateProduct.Commands;
 using Inventory_Management_System.VerticalSlice.Common.MapperHelper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Inventory_Management_System.VerticalSlice.Features.Products.UpdateProduct
 {
@@ -19,6 +20,7 @@ namespace Inventory_Management_System.VerticalSlice.Features.Products.UpdateProd
             _mediator = mediator;
         }
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateProductAsync([FromBody] UpdateProductEndPointRequest request)
         {
             var result = await _mediator.Send(request.MapOne<UpdateProductCommand>());

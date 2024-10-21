@@ -5,6 +5,7 @@ using Inventory_Management_System.VerticalSlice.Features.Products.AddProduct.Com
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Inventory_Management_System.VerticalSlice.Features.Transactions.AddStockTransaction.Command;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Inventory_Management_System.VerticalSlice.Features.Transactions.AddStockTransaction
 {
@@ -18,6 +19,7 @@ namespace Inventory_Management_System.VerticalSlice.Features.Transactions.AddSto
             _mediator = mediator;
         }
         [HttpPost]
+       // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddStockTransactionAsync([FromBody] AddStockTransactionEndPointRequest request)
         {
             var result = await _mediator.Send(request.MapOne<AddStockTransactionCommand>());

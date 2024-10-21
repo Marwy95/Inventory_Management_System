@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Inventory_Management_System.VerticalSlice.Features.Transactions.RemoveStockTransaction.Commands;
 using Inventory_Management_System.VerticalSlice.Common.MapperHelper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Inventory_Management_System.VerticalSlice.Features.Transactions.RemoveStockTransaction
 {
@@ -19,6 +20,7 @@ namespace Inventory_Management_System.VerticalSlice.Features.Transactions.Remove
             _mediator = mediator;
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddStockTransactionAsync([FromBody] RemoveStockTransactionEndPointRequest request)
         {
             var result = await _mediator.Send(request.MapOne<RemoveStockTransactionCommand>());

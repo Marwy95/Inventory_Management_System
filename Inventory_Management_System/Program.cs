@@ -21,6 +21,8 @@ namespace Inventory_Management_System
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //Enviroment
+            Env.Load();
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -58,8 +60,7 @@ namespace Inventory_Management_System
         }
     });
             });
-            //Enviroment
-            Env.Load();
+            
             //MEDIATR
             //builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
             //AUTOFAC
@@ -93,7 +94,8 @@ namespace Inventory_Management_System
             builder.Services.AddAutoMapper(typeof(ProductProfile),typeof(TransactionProfile), typeof(UserProfile));
             var app = builder.Build();
             app.UseHangfireDashboard("/hangfire");
-            RecurringJob.AddOrUpdate<LowStockbackgroundJob>(job => job.CheckLowStockProducts(), Cron.Daily);
+            //RecurringJob.AddOrUpdate<LowStockbackgroundJob>(job => job.CheckLowStockProducts(), Cron.Daily);
+            RecurringJob.AddOrUpdate<LowStockbackgroundJob>("LowStockbackgroundJob", job=>job.CheckLowStockProducts(), Cron.Daily);
             //AUTOMAPPER
             MapperService.Mapper = app.Services.GetService<IMapper>();
             // Configure the HTTP request pipeline.
@@ -105,8 +107,9 @@ namespace Inventory_Management_System
 
             app.UseHttpsRedirection();
             app.UseMiddleware<GlobalErrorHandlerMiddleware>();
-            app.UseAuthorization();
+           
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllers();
 
