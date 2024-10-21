@@ -4,14 +4,13 @@
 The Inventory Management System is a backend API developed using .NET technologies, designed to manage product inventories efficiently. It includes features such as product management, inventory transactions, reporting, and notifications for low-stock items.
 
 ## Technologies Used
-ASP.NET Core Web API
-
-Entity Framework Core
-RabbitMQ
-CQRS (Command Query Responsibility Segregation)
-Vertical Slicing Architecture
-JWT Authentication
-Hangfire for Background Jobs
+ASP.NET Core Web API.
+Entity Framework Core.
+RabbitMQ.
+CQRS (Command Query Responsibility Segregation).
+Vertical Slicing Architecture.
+JWT Authentication.
+Hangfire for Background Jobs.
 
 ## Features
 ### Product Management
